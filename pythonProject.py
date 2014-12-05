@@ -11,9 +11,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from urllib import request
 
-filename = "results.csv"
+low_memory=False
 
-df = pd.read_csv(filename, encoding='latin1')
+filename = "results.csv"
+filename2 = "results2.csv"
+#df = pd.read_csv(filename, encoding='latin1')\
+df2 = pd.read_csv(filename2, encoding='latin1')
+
+
 
 #print(df.iloc[1])
 
@@ -21,19 +26,12 @@ df = pd.read_csv(filename, encoding='latin1')
 
 #print(df.iloc[44][3])
 
-test = str(df.iloc[44][0])
+test = str(df.iloc[44][3])
+
 
 if(test == 'nan'):
     print('null')
+    
+    df2.dropna
+    print(df2)
 
-
-for x in df:
-    print(df.iloc[x])
-    
-    
-"""y = 0
-    while(y<8):
-        if(df[x][y] == null):"""
-            
-        
-    
