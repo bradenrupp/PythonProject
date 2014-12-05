@@ -11,27 +11,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 from urllib import request
 
-low_memory=False
 
-filename = "results.csv"
-filename2 = "results2.csv"
-#df = pd.read_csv(filename, encoding='latin1')\
-df2 = pd.read_csv(filename2, encoding='latin1')
+filename = "results2.csv"
 
+#Reads csv file into dataframe
+df = pd.read_csv(filename, encoding='latin1')
 
+#Drops any rows that do not contain any information in them
+df2 = df.dropna(how='any')
 
-#print(df.iloc[1])
+mean = df.mean()
 
-#print(df.iloc[44])
+#Display Averages of the Data for insight
+print ('The averages of the data: \n', np.round(df.mean(), decimals=2))
 
-#print(df.iloc[44][3])
+df['SaleDate'] = df['SaleDate'].map(lambda x: str(x)[6:])
 
-test = str(df.iloc[44][3])
-
-
-if(test == 'nan'):
-    print('null')
-    
-    df2.dropna
-    print(df2)
+df.SaleDate
 
