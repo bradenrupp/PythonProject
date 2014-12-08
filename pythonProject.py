@@ -49,12 +49,6 @@ print ('The averages of the data: \n', np.round(df.mean(), decimals=2))
 
 
 
-#df.plot(kind='scatter', x='Bath (1/2 + full)', y='Price');
-#df.plot(kind='scatter', x='TBr', y='Price');
-
-
-
-
 dfYear = df2[df2.Yr == 1920]
 
 #Average of 1920 house prices
@@ -71,7 +65,7 @@ df3.plot(kind='scatter', x='Yr', y='Price')
 
 
 #Groups Sale Dates together and averages their prices and plots in bar graph
-df2.groupby('SaleDate').Price.mean().plot(kind='bar')
+#df2.groupby('SaleDate').Price.mean().plot(kind='bar')
 
 
 
