@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from urllib import request
+from datetime import datetime
 
 
 filename = "results2.csv"
@@ -17,15 +18,68 @@ filename = "results2.csv"
 #Reads csv file into dataframe
 df = pd.read_csv(filename, encoding='latin1')
 
-#Drops any rows that do not contain any information in them
-df2 = df.dropna(how='any')
-
 #Strips off information we don't need about the date
 df['SaleDate'] = df['SaleDate'].map(lambda x: str(x)[6:])
 
 #Converts date to Floating point number
 df['SaleDate'] = df['SaleDate'].astype(int)
 
+#Sale date
+format = "%Y"
+times = pd.to_datetime(df.SaleDate, format=format)
+df.set_index(times, inplace=True)
+
+
+
+
+#Drops any rows that do not contain any information in them
+df2 = df.dropna(how='any')
+
+
+
 #Display Averages of the Data for insight
 print ('The averages of the data: \n', np.round(df.mean(), decimals=2))
+
+#Year and price before outliers are taken out
+
+
+#plots
+
+
+
+#df.plot(kind='scatter', x='Bath (1/2 + full)', y='Price');
+#df.plot(kind='scatter', x='TBr', y='Price');
+
+
+
+
+dfYear = df2[df2.Yr == 1920]
+
+#Average of 1920 house prices
+dfYear.plot(kind='bar', x='Yr', y='Price')
+
+#Year and Price after outliers taken out
+df3 = df2[df2.Price < 350000]
+df3.plot(kind='scatter', x='Yr', y='Price')
+
+#Year and Price without outliers taken out
+df2.plot(kind='scatter', x='Yr', y='Price')
+
+
+
+
+'''
+#plots
+df.plot(kind='scatter', x='Yr', y='Price');
+df.plot(kind='line', x='Yr', y='Price');
+df.plot(kind='scatter', x='Bath (1/2 + full)', y='Price');
+df.plot(kind='scatter', x='TBr', y='Price');
+'''
+
+'''
+#Other plots
+df.plot()
+df.Price.plot()
+'''
+
 
