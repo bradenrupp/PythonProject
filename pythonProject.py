@@ -24,16 +24,18 @@ df['SaleDate'] = df['SaleDate'].map(lambda x: str(x)[6:])
 #Converts date to Floating point number
 df['SaleDate'] = df['SaleDate'].astype(int)
 
-#Sale date
-format = "%Y"
-times = pd.to_datetime(df.SaleDate, format=format)
-df.set_index(times, inplace=True)
 
 
 
 
 #Drops any rows that do not contain any information in them
 df2 = df.dropna(how='any')
+
+#Sale date
+format = "%Y"
+times = pd.to_datetime(df2.SaleDate, format=format)
+df2.set_index(times, inplace=True)
+
 
 
 
@@ -58,12 +60,20 @@ dfYear = df2[df2.Yr == 1920]
 #Average of 1920 house prices
 dfYear.plot(kind='bar', x='Yr', y='Price')
 
+#Year and Price without outliers taken out
+df2.plot(kind='scatter', x='Yr', y='Price')
+
+
+
 #Year and Price after outliers taken out
 df3 = df2[df2.Price < 350000]
 df3.plot(kind='scatter', x='Yr', y='Price')
 
-#Year and Price without outliers taken out
-df2.plot(kind='scatter', x='Yr', y='Price')
+
+#Groups Sale Dates together and averages their prices and plots in bar graph
+df2.groupby('SaleDate').Price.mean().plot(kind='bar')
+
+
 
 
 
