@@ -57,8 +57,6 @@ dfYear.plot(kind='bar', x='Yr', y='Price')
 #Year and Price without outliers taken out
 df2.plot(kind='scatter', x='Yr', y='Price')
 
-
-
 #Year and Price after outliers taken out
 df3 = df2[df2.Price < 350000]
 df3.plot(kind='scatter', x='Yr', y='Price')
@@ -67,23 +65,21 @@ df3.plot(kind='scatter', x='Yr', y='Price')
 #Groups Sale Dates together and averages their prices and plots in bar graph
 #df2.groupby('SaleDate').Price.mean().plot(kind='bar')
 
+#Groups by number of Total Bedrooms and shows effect on price of house
+#df2.groupby('TBr').Price.mean().plot(kind='bar')
+
+#Groups by number of Total Bathrooms and shows effect on price of house
+#df2.groupby('Bathrooms').Price.mean().plot(kind='bar')
+
+#Which has more effect bathroom or bedrooms on price
+#This is how you choose columns:
+#df.ix[:,['TBr', 'Bathrooms', 'Price']]
+#not sure what to do with the 
 
 
 
+#Shows effect on area and price(outliers taken out)
+#df3.plot(kind='scatter', x='Area', y='Price')
 
-
-'''
-#plots
-df.plot(kind='scatter', x='Yr', y='Price');
-df.plot(kind='line', x='Yr', y='Price');
-df.plot(kind='scatter', x='Bath (1/2 + full)', y='Price');
-df.plot(kind='scatter', x='TBr', y='Price');
-'''
-
-'''
-#Other plots
-df.plot()
-df.Price.plot()
-'''
 
 
