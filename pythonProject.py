@@ -74,7 +74,7 @@ df3.plot(kind='scatter', x='Yr', y='Price')
 #Which has more effect bathroom or bedrooms on price
 #This is how you choose columns:
 #df.ix[:,['TBr', 'Bathrooms', 'Price']]
-#not sure what to do with the 
+#not sure what to do with the graph 
 
 
 
