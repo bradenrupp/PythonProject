@@ -5,12 +5,8 @@ Created on Sun Dec  7 20:33:58 2014
 @author: mshep
 """
 
-import csv
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-from urllib import request
-from datetime import datetime
 
 
 filename = "results2.csv"
@@ -142,22 +138,23 @@ def plotCityLotSizeAverages():
 
     
 def seeFunctions():
-     print('Available Functions:')
-     print('(1)  plotCityAverages()')
-     print('(2)  printAverages()')
-     print('(3)  plotAverageYear()')
-     print('(4)  plotAverYearBuilt()')
-     print('(5)  plotSaleDateAverages()')
-     print('(6)  plotAreaPrice()')
-     print('(7)  plotBedPrice()')
-     print('(8)  plotBathPrice()')
-     print('(9)  plotBedBath()')
-     print('(10) plotBathBed() \n')
+     print('Available Functions: \n')
+     print('(1)  printAverages()')
+     print('(2)  plotAverageYear()')
+     print('(3)  plotAverYearBuilt()')
+     print('(4)  plotSaleDateAverages()')
+     print('(5)  plotAreaPrice()')
+     print('(6)  plotBedPrice()')
+     print('(7)  plotBathPrice()')
+     print('(8)  plotBedBath()')
+     print('(9) plotBathBed() \n')
      print('other \n')
-     print('(11) plotAverageOnAcre()')
-     print('(12) plotAcresWithArea()')
-     print('(13) plotAveragePricePerAcre()')
-     print('(14) plotAveragePriceOfArea()')
+     print('(10) plotAverageOnAcre()')
+     print('(11) plotAcresWithArea()')
+     print('(12) plotAveragePricePerAcre()')
+     print('(13) plotAveragePriceOfArea() \n')
+     print('All City \n')
+     print('(14) plotCityAverages()')
      print('(15) plotCityBedAverages()')
      print('(16) plotCityBathAverages()')
      print('(17) plotCitySqFtAverages()')
@@ -174,3 +171,9 @@ def main():
     
 if __name__ == "__main__":
     main()
+    
+#PRESENTATION
+#df.head()
+#df.City.unique()
+#df.City.count()
+

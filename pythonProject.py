@@ -5,12 +5,9 @@ Created on Tue Dec  2 17:13:20 2014
 @author: Braden
 """
 
-import csv
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-from urllib import request
-from datetime import datetime
+
 
 
 filename = "results2.csv"
