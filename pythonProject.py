@@ -51,7 +51,7 @@ def plotAverageYear(df, year):
     year = int(year)
     titlename = str(year)
     dfYear = df[df.Yr == year]
-    dfYear.plot(kind='bar', x='Yr', y='Price', title='Average Price of '+ titlename + ' Houses')
+    dfYear.plot(kind='bar', x='Yr', y='Price', title=' Price of '+ titlename + ' Houses')
     
 def plotAverageYearBuilt(df, outliers):
     """Plots the year built and price, with and without outliers
@@ -111,13 +111,13 @@ def seeFunctions():
      print('(8)  plotBathPrice()')
      print('(9)  plotBedBath()')
      print('(10) plotBathBed() \n')
-     print('Type help(functioName) for description and example.')
+     print('Type help(functionName) for description and example.')
      
     
 def main():    
     print('\nHello, Welcome to Iowa House Plotter \n')
     print('Available cities: Des Moines (dsm), Ankeny(ank), Clive(clv), & Johnston(jhn) \n')
-    print('Enter "seeFunctions()" to see functions in the Console or another key to quit \n')
+    print('Enter "seeFunctions()" to see functions in the Console')
     
     
 if __name__ == "__main__":
