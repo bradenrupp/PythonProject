@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Dec  2 17:13:20 2014
+Created on Sun Dec  7 20:33:58 2014
 
-@author: Braden
+@author: mshep
 """
 
 import pandas as pd
 import numpy as np
-
 
 
 filename = "results2.csv"
@@ -113,25 +112,53 @@ def plotAveragePriceOfArea(df):
        Ex. plotAveragePriceOfArea(ank)"""
     df.groupby('Area').Price.mean().plot(kind='bar', title = 'Average Price for Area of house')
 
+def plotCityBedAverages():
+    """Grups by average city bedrooms and plots them 
+       Used only on DataFrame containing all cities
+       Ex. plotCityBedAverages()"""
+    df.groupby('City').TBr.mean().plot(kind='bar', title='Average bedrooms per City')
+
+def plotCityBathAverages():
+    """Groups by average city bathrooms and plots
+       Used only on DataFrame containing all cities
+       Ex. plotCityBathAverages()""" 
+    df.groupby('City').Bathrooms.mean().plot(kind='bar', title='Average bathrooms per City')
+
+def plotCitySqFtAverages():
+    """Groups by average city house square footage and plots
+       Used only on DataFrame containing all cities
+       Ex. plotCitySqFtAverages()"""
+    df.groupby('City').Area.mean().plot(kind='bar', title='Average Sq Ft per City')
+
+def plotCityLotSizeAverages():
+    """Groups by city and shows the average house acreage and pots
+       Used only on DataFrame containing all cities
+       Ex. PlotCityLotSizeAverages"""
+    df.groupby('City').Acres.mean().plot(kind='bar', title='Average Acres per City')
 
     
 def seeFunctions():
-     print('Available Functions:')
-     print('(1)  plotCityAverages()')
-     print('(2)  printAverages()')
-     print('(3)  plotAverageYear()')
-     print('(4)  plotAverYearBuilt()')
-     print('(5)  plotSaleDateAverages()')
-     print('(6)  plotAreaPrice()')
-     print('(7)  plotBedPrice()')
-     print('(8)  plotBathPrice()')
-     print('(9)  plotBedBath()')
-     print('(10) plotBathBed() \n')
+     print('Available Functions: \n')
+     print('(1)  printAverages()')
+     print('(2)  plotAverageYear()')
+     print('(3)  plotAverYearBuilt()')
+     print('(4)  plotSaleDateAverages()')
+     print('(5)  plotAreaPrice()')
+     print('(6)  plotBedPrice()')
+     print('(7)  plotBathPrice()')
+     print('(8)  plotBedBath()')
+     print('(9) plotBathBed() \n')
      print('other \n')
-     print('(11) plotAverageOnAcre()')
-     print('(12) plotAcresWithArea()')
-     print('(13) plotAveragePricePerAcre()')
-     print('(14) plotAveragePriceOfArea() \n')
+     print('(10) plotAverageOnAcre()')
+     print('(11) plotAcresWithArea()')
+     print('(12) plotAveragePricePerAcre()')
+     print('(13) plotAveragePriceOfArea() \n')
+     print('All City \n')
+     print('(14) plotCityAverages()')
+     print('(15) plotCityBedAverages()')
+     print('(16) plotCityBathAverages()')
+     print('(17) plotCitySqFtAverages()')
+     print('(18) plotCityLotSizeAverages() \n')
 
      print('Type help(functionName) for description and example.')
      
@@ -144,8 +171,9 @@ def main():
     
 if __name__ == "__main__":
     main()
-        
-
-
-
+    
+#PRESENTATION
+#df.head()
+#df.City.unique()
+#df.City.count()
 
