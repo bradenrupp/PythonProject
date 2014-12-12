@@ -100,18 +100,14 @@ def seeFunctions():
      print('(8)  plotBathPrice()')
      print('(9)  plotBedBath()')
      print('(10) plotBathBed() \n')
-     print('Type help(funcationname) for description and example.')
+     print('Type help(functioName) for description and example.')
      
-    
     
 def main():    
     print('Hello, Welcome to Iowa House Plotter \n')
     print('Available cities: Des Moines, Ankeny, Clive, & Johnston \n')
     print('Enter "seeFunctions()" to see functions in the Console or another key to quit \n')
-
-        
-        
-        
+    
     
 if __name__ == "__main__":
     main()
