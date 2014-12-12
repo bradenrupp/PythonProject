@@ -38,6 +38,30 @@ df.set_index(times, inplace=True)
 #df.ix[:,['TBr', 'Bathrooms', 'Price']]
 #not sure what to do with the graph 
 
+print('Hello, Welcome to Iowa House Plotter')
+print('Available cities: Des Moines, Ankeny, Clive, & Johnston')
+
+cont = True
+value = ''
+
+while(cont == True):
+    print('Available Functions:')
+    print('(1) plotCityAverage')
+    print('(2) printAverages')
+    print('(3) plotAverageYear')
+    print('(4) plotAverYearBuilt')
+    print('(5) plotSaleDateAverages')
+    print('(6) plotAreaPrice')
+    print('(7) plotBedPrice')
+    print('(8) plotBathPrice')
+    print('(9) plotBedBath')
+    print('(10) plotBathBed')
+    #Takes value
+    value = input()
+    
+    
+          
+    
 
 #PLOT METHODS
 
@@ -83,6 +107,10 @@ def plotBedBath():
 def plotBathBed():
      """Group by bathrooms and plot bedrooms on y"""
      df.groupby('Bathrooms').TBr.mean().plot(kind='bar', title='Bathrooms vs Bedrooms')
+     
+def plotCityAverage():
+    """Groups by average city price and plots them"""
+    df.groupby('City').Price.mean().plot(kind='bar', title='Average price per City')
 
         
     
