@@ -98,6 +98,25 @@ def plotCityAverages():
         Used only on DataFrame containing all cities
         Ex. plotCityAverages()"""
     df.groupby('City').Price.mean().plot(kind='bar', title='Average price per City')
+
+def plotAverageOnAcre(df):    
+    """Plots the average area of house on Acres of land"""
+    df.groupby('Acres').Area.mean().plot(kind='bar', title = 'Average area of house on an Acres of land')
+
+def plotAcresWithArea(df):
+    """Plot Average acres of land with area of house"""
+    df.groupby('Area').Acres.mean().plot(kind='bar', title = 'Average Acres of land with area of house')
+
+def plotAveragePricePerAcre(df):
+    """Plots average price per Acre"""
+    df.groupby('Acres').Price.mean().plot(kind='bar', title = 'Average Price Per Acre')
+
+def plotAveragePriceOfArea(df):
+    """Plots Average price for area of house
+       Ex. plotAveragePriceOfArea(ank)"""
+    df.groupby('Area').Price.mean().plot(kind='bar', title = 'Average Price for Area of house')
+
+
     
 def seeFunctions():
      print('Available Functions:')
@@ -111,6 +130,12 @@ def seeFunctions():
      print('(8)  plotBathPrice()')
      print('(9)  plotBedBath()')
      print('(10) plotBathBed() \n')
+     print('other \n')
+     print('(11) plotAverageOnAcre()')
+     print('(12) plotAcresWithArea()')
+     print('(13) plotAveragePricePerAcre()')
+     print('(14) plotAveragePriceOfArea() \n')
+
      print('Type help(functionName) for description and example.')
      
     
